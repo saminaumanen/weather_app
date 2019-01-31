@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Weather from "./Weather";
-import Titles from "./Titles";
 import WeatherTable from "./WeatherTable";
 import './App.css';
 
@@ -35,7 +34,8 @@ class App extends Component {
 
     return (
       <div class="container" id="weather_container">
-        <Titles />
+          <h1>Search for a city</h1>
+            <p>insert city name to see temperature</p>
           <WeatherTable loadWeather={this.getWeather} />
           <Weather
             city={this.state.city}
