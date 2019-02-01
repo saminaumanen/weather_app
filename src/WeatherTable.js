@@ -5,8 +5,8 @@ class WeatherTable extends Component {
 
     return(
             <form onSubmit = {this.props.loadWeather}>
-                <input type="text" name="city" placeholder="City..."/><br></br>
-                <button id="search">Search</button>
+                <input type="text" id="city" placeholder="City..."/><br></br>
+                <button id="searchButton">Search</button>
             </form>
     )
 }

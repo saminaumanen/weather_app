@@ -13,6 +13,7 @@ class App extends Component {
     description: ""
   }
 
+
   getWeather = async (e) => {
 
     const city = e.target.elements.city.value;
@@ -30,10 +31,27 @@ class App extends Component {
     }
   }
 
+componentWillMount(){
+  localStorage.getItem('city') && this.setState({
+    city:JSON.parse(localStorage.getItem('city')),
+    temperature:JSON.parse(localStorage.getItem('temperature')),
+    description:JSON.parse(localStorage.getItem('description')),
+    isLoading: false
+  })
+}
+
+
+componentWillUpdate(nextProps, nextState){
+  localStorage.setItem('city',JSON.stringify(nextState.city));
+  localStorage.setItem('temperature',JSON.stringify(nextState.temperature));
+  localStorage.setItem('description',JSON.stringify(nextState.description));
+}
+
+
   render() {
 
     return (
-      <div class="container" id="weather_container">
+      <div id="weather_container">
           <h1>Search for a city</h1>
             <p>insert city name to see temperature</p>
           <WeatherTable loadWeather={this.getWeather} />
@@ -45,4 +63,5 @@ class App extends Component {
     )
   }
 }
+
 export default App;

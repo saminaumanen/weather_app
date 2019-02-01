@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
+
 class Weather extends Component {
+    
   render(){
 
     return(
 
-        <div>
+        <div id="city_container">
             {
                this.props.city && <p>Location: 
                     <span className="value">  {this.props.city}</span>                    
@@ -23,6 +25,7 @@ class Weather extends Component {
                     <span className="value">  {this.props.description}</span>
                 </p>
             }
+           
         </div>
     )
 }
