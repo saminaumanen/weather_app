@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class WeatherTable extends Component {
+class SearchWeather extends Component {
   render(){
 
     return(
@@ -12,4 +12,4 @@ class WeatherTable extends Component {
 }
 }
 
-export default WeatherTable;
+export default SearchWeather;

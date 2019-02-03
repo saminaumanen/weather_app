@@ -25,7 +25,11 @@ class Weather extends Component {
                     <span className="value">  {this.props.description}</span>
                 </p>
             }
-           
+
+            {
+                this.props.icon && <p><img src={this.props.icon} alt="Weather Icon" /></p>
+            }       
+            
         </div>
     )
 }

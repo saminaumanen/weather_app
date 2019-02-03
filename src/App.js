@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Weather from "./Weather";
-import WeatherTable from "./WeatherTable";
+import SearchWeather from "./SearchWeather";
 import './App.css';
 
 
@@ -10,7 +10,8 @@ class App extends Component {
   state = {
     city: "",
     temperature: "",
-    description: ""
+    description: "",
+    icon:"",
   }
 
 
@@ -27,6 +28,7 @@ class App extends Component {
         city: response.name,
         temperature: response.main.temp,
         description: response.weather[0].description,
+        icon: "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
       })
     }
   }
@@ -36,6 +38,7 @@ componentWillMount(){
     city:JSON.parse(localStorage.getItem('city')),
     temperature:JSON.parse(localStorage.getItem('temperature')),
     description:JSON.parse(localStorage.getItem('description')),
+    icon:JSON.parse(localStorage.getItem('icon')),
     isLoading: false
   })
 }
@@ -45,6 +48,7 @@ componentWillUpdate(nextProps, nextState){
   localStorage.setItem('city',JSON.stringify(nextState.city));
   localStorage.setItem('temperature',JSON.stringify(nextState.temperature));
   localStorage.setItem('description',JSON.stringify(nextState.description));
+  localStorage.setItem('icon',JSON.stringify(nextState.icon));
 }
 
 
@@ -54,11 +58,12 @@ componentWillUpdate(nextProps, nextState){
       <div id="weather_container">
           <h1>Search for a city</h1>
             <p>insert city name to see temperature</p>
-          <WeatherTable loadWeather={this.getWeather} />
+          <SearchWeather loadWeather={this.getWeather} />
           <Weather
             city={this.state.city}
             temperature={this.state.temperature}
-            description={this.state.description} />
+            description={this.state.description}
+            icon={this.state.icon} />
       </div>
     )
   }
