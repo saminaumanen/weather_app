@@ -58,7 +58,7 @@ componentWillUpdate(nextProps, nextState){
       <div id="weather_container">
           <h1>Search for a city</h1>
             <p>insert city name to see temperature</p>
-          <SearchWeather loadWeather={this.getWeather} />
+          <SearchWeather searchWeather={this.getWeather} />
           <Weather
             city={this.state.city}
             temperature={this.state.temperature}
