@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  id="weather_container"
+>
+  <h1>
+    Search for a city
+  </h1>
+  <p>
+    insert city name to see temperature
+  </p>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      id="city"
+      placeholder="City..."
+      type="text"
+    />
+    <br />
+    <button
+      id="searchButton"
+    >
+      Search
+    </button>
+  </form>
+  <div
+    id="city_container"
+  >
+    
+    
+    
+    
+  </div>
+</div>
+`;
