@@ -9,4 +9,4 @@ This application uses localstorage to save the current city and its weather cond
 
 ## Other information
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br>
-This project uses enzyme for basic component render testing 
+This project uses [enzyme](https://github.com/airbnb/enzyme) for basic component render testing 
