@@ -39,6 +39,7 @@ class App extends Component {
     }
   }
 
+  
 componentWillMount(){
   localStorage.getItem('city') && this.setState({
     city:JSON.parse(localStorage.getItem('city')),

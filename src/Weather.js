@@ -29,9 +29,11 @@ class Weather extends Component {
             {
                 this.props.icon && <p><img src={this.props.icon} alt="Weather Icon" /></p>
             }       
+            
             {
-                    this.props.error && <p className="weather__error">{this.props.error}</p>
-                }
+                this.props.error && <p className="weather__error">{this.props.error}</p>
+            }
+
         </div>
     )
 }
