@@ -12,6 +12,7 @@ class App extends Component {
     temperature: "",
     description: "",
     icon:"",
+    error: ""
   }
 
 
@@ -28,7 +29,12 @@ class App extends Component {
         city: response.name,
         temperature: response.main.temp,
         description: response.weather[0].description,
-        icon: "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
+        icon: "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png",
+        error: ""
+      })
+    }else{
+      this.setState({
+        error: "Please input search values..."
       })
     }
   }
@@ -39,6 +45,7 @@ componentWillMount(){
     temperature:JSON.parse(localStorage.getItem('temperature')),
     description:JSON.parse(localStorage.getItem('description')),
     icon:JSON.parse(localStorage.getItem('icon')),
+    error:JSON.parse(localStorage.getItem('error')),
     isLoading: false
   })
 }
@@ -49,6 +56,7 @@ componentWillUpdate(nextProps, nextState){
   localStorage.setItem('temperature',JSON.stringify(nextState.temperature));
   localStorage.setItem('description',JSON.stringify(nextState.description));
   localStorage.setItem('icon',JSON.stringify(nextState.icon));
+  localStorage.setItem('error',JSON.stringify(nextState.error));
 }
 
 
@@ -63,7 +71,8 @@ componentWillUpdate(nextProps, nextState){
             city={this.state.city}
             temperature={this.state.temperature}
             description={this.state.description}
-            icon={this.state.icon} />
+            icon={this.state.icon} 
+            error={this.state.error}/>
       </div>
     )
   }
