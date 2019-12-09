@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Weather from "./Weather";
-import SearchWeather from "./SearchWeather";
+import Weather from "./Components/Weather";
+import SearchWeather from "./Components/SearchWeather";
 import './App.css';
 
 

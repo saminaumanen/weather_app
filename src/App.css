@@ -39,11 +39,12 @@ body, p {
 }
 
 #weather_container{
-  max-width: 350px;
-  margin: 20px;
+  max-width: 500px;
   padding: 20px;
   border-radius: 4px;
   background-color: #008CBA ;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 img {
